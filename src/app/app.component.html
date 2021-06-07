@@ -5,6 +5,7 @@
 		<div class="col-xs-12">
 			<app-server-element
 				*ngFor="let server of serverElements"
+				[element]="server"
 			></app-server-element>
 		</div>
 	</div>

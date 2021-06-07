@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EServerType, IServer } from '@app-models';
 
 @Component({
 	selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
 	styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-	serverElements: any[] = [];
+	serverElements: IServer[] = [
+		{
+			type: EServerType.SERVER,
+			name: 'Test Server',
+			content: 'My test server.'
+		}
+	];
 }

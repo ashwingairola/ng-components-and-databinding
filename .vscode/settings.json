@@ -4,5 +4,6 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.rulers": [80, 120],
 	"editor.insertSpaces": false,
-	"editor.detectIndentation": false
+	"editor.detectIndentation": false,
+	"eslint.format.enable": true
 }
