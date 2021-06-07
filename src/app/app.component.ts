@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EServerType, IServer } from '@app-models';
+import { EServerType, IServer, IServerAddData } from '@app-models';
 
 @Component({
 	selector: 'app-root',
@@ -14,4 +14,20 @@ export class AppComponent {
 			content: 'My test server.'
 		}
 	];
+
+	onServerAdded(serverData: IServerAddData) {
+		this.serverElements.push({
+			type: EServerType.SERVER,
+			name: serverData.serverName,
+			content: serverData.serverContent
+		});
+	}
+
+	onBlueprintAdded(serverData: IServerAddData) {
+		this.serverElements.push({
+			type: EServerType.BLUEPRINT,
+			name: serverData.serverName,
+			content: serverData.serverContent
+		});
+	}
 }

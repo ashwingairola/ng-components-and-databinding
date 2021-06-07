@@ -8,3 +8,8 @@ export interface IServer {
 	name: string;
 	content: string;
 }
+
+export interface IServerAddData {
+	serverName: string;
+	serverContent: string;
+}
