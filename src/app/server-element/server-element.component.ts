@@ -5,6 +5,7 @@ import {
 	AfterViewInit,
 	ChangeDetectionStrategy,
 	Component,
+	ContentChild,
 	DoCheck,
 	ElementRef,
 	Input,
@@ -38,6 +39,8 @@ export class ServerElementComponent
 	@Input('srvElement') element!: IServer;
 	@Input() name!: string;
 	@ViewChild('heading', { static: true }) heading!: ElementRef<HTMLDivElement>;
+	@ContentChild('contentParagraph', { static: true })
+	paragraph?: ElementRef<HTMLParagraphElement>;
 
 	constructor() {
 		console.log('constructor called');
@@ -46,6 +49,10 @@ export class ServerElementComponent
 	ngOnInit(): void {
 		console.log('ngOnInit called');
 		console.log('Text content:', this.heading.nativeElement.textContent);
+		console.log(
+			'Content paragraph:',
+			this.paragraph?.nativeElement.textContent
+		);
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
@@ -59,6 +66,10 @@ export class ServerElementComponent
 
 	ngAfterContentInit() {
 		console.log('ngAfterContentInit called');
+		console.log(
+			'Content paragraph:',
+			this.paragraph?.nativeElement.textContent
+		);
 	}
 
 	ngAfterContentChecked() {
