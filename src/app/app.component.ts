@@ -12,12 +12,12 @@ export class AppComponent implements OnChanges {
 			type: EServerType.SERVER,
 			name: 'Test Server',
 			content: 'My test server.'
-		},
-		{
-			content: 'Stuff',
-			name: 'NewServer',
-			type: EServerType.BLUEPRINT
 		}
+		// {
+		// 	content: 'Stuff',
+		// 	name: 'NewServer',
+		// 	type: EServerType.BLUEPRINT
+		// }
 	];
 
 	ngOnChanges(changes: SimpleChanges) {

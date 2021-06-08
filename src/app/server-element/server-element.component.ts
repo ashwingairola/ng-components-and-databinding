@@ -6,11 +6,13 @@ import {
 	ChangeDetectionStrategy,
 	Component,
 	DoCheck,
+	ElementRef,
 	Input,
 	OnChanges,
 	OnDestroy,
 	OnInit,
 	SimpleChanges,
+	ViewChild,
 	ViewEncapsulation
 } from '@angular/core';
 import { IServer } from '@app-models';
@@ -35,6 +37,7 @@ export class ServerElementComponent
 {
 	@Input('srvElement') element!: IServer;
 	@Input() name!: string;
+	@ViewChild('heading', { static: true }) heading!: ElementRef<HTMLDivElement>;
 
 	constructor() {
 		console.log('constructor called');
@@ -42,6 +45,7 @@ export class ServerElementComponent
 
 	ngOnInit(): void {
 		console.log('ngOnInit called');
+		console.log('Text content:', this.heading.nativeElement.textContent);
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
@@ -63,6 +67,7 @@ export class ServerElementComponent
 
 	ngAfterViewInit() {
 		console.log('ngAfterViewInit called');
+		console.log('Text content:', this.heading.nativeElement.textContent);
 	}
 
 	ngAfterViewChecked() {
